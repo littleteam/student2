@@ -33,6 +33,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
         s = sf.openSession();
         //开始事务
         Transaction tx =s.beginTransaction();
+
         Account db_acc = (Account)s.get(Account.class, account.getAccUid());
         if(db_acc == null) {
             this.errMessage = " 账号不存在 ";
