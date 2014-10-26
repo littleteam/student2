@@ -5,6 +5,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.team.dao.AccountDao;
 import com.team.domain.Account;
 
+import java.util.List;
+
 /**
  * Created by 星宇 on 2014/10/26.
  */
@@ -30,6 +32,8 @@ public class LoginAction extends ActionSupport {
             return "error";
         }
         ctx.getSession().put("username", account.getAccUname());
+        List<Account> acc=AccountDao.ShowAccount();
+        ctx.put("acclist",acc);
         return "main_view";
 
 		/*
