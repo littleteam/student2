@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.team.domain.Course" table="course" schema="" catalog="stu">
+        <id name="couId">
+            <column name="cou_id" sql-type="int" not-null="true"/>
+        </id>
+        <property name="couName">
+            <column name="cou_name" sql-type="varchar" length="45"/>
+        </property>
+        <property name="couGrade">
+            <column name="cou_grade" sql-type="int"/>
+        </property>
+        <property name="couSchId">
+            <column name="cou_sch_id" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

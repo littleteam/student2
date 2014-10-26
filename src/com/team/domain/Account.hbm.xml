@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.team.domain.Account" table="account" schema="" catalog="stu">
+        <id name="accUid">
+            <column name="acc_uid" sql-type="int" not-null="true"/>
+        </id>
+        <property name="accUname">
+            <column name="acc_uname" sql-type="varchar" length="45" not-null="true"/>
+        </property>
+        <property name="accPass">
+            <column name="acc_pass" sql-type="varchar" length="45"/>
+        </property>
+        <property name="accIsadmin">
+            <column name="acc_isadmin" sql-type="int" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
