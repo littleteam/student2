@@ -11,6 +11,11 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     List<Account> accountInfoList = (List<Account>)request.getSession().getAttribute("acclist");
+    if(accountInfoList == null) {
+        // redirect to login.jsp
+        response.sendRedirect("login.jsp");
+        return;
+    }
     String username=(String)session.getAttribute("username");
 %>
 <html>
