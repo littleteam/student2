@@ -60,28 +60,26 @@ public class LoginAction extends ActionSupport {
         return "main_view";
     }
     public String Ajax() throws IOException {
-
-        HttpServletResponse response = ServletActionContext.getResponse();
-//        response.setContentType("text/json;charset=utf-8");
-        response.setCharacterEncoding("utf-8");
-        PrintWriter printWriter = response.getWriter();
-
         Map<String, String> map = new HashMap<String, String>();
-        map.put("result", "ok");
-
-//        Map map = new HashMap();
-//        map.put("result", "fsd");
-        result = JSONObject.fromObject(map).toString();
-
         AccountDao acDAO = new AccountDao();
         ActionContext ctx = ActionContext.getContext();
-//        if (!acDAO.CheckLogin(account)) {
-//            printWriter.write("{\"result\":\"false\"}");
-//        }
-//        printWriter.write("{\"result\":\"ok\"}");
-//        printWriter.flush();
-//        printWriter.close();
+        if (acDAO.CheckLogin(account)) {
+            map.put("result", "ok");
+            map.put("url", "index.jsp");
+        }  else {
+            map.put("result", "error");
+            // 将登陆信息存入session
+            putSession();
+        }
+        result = JSONObject.fromObject(map).toString();
 
         return Action.SUCCESS;
+    }
+
+    private void putSession() {
+        ActionContext ctx = ActionContext.getContext();
+        ctx.getSession().put("username", account.getAccUname());
+        List<Account> acc=AccountDao.ShowAccount();
+        ctx.put("acclist",acc);
     }
 }
