@@ -10,7 +10,7 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-    List<Account> accountInfoList = (List<Account>)request.getAttribute("acclist");
+    List<Account> accountInfoList = (List<Account>)request.getSession().getAttribute("acclist");
     String username=(String)session.getAttribute("username");
 %>
 <html>

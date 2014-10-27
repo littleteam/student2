@@ -19,7 +19,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title><s:text name="loginPage"/></title>
-</head>
+</head>5
 <body>
 <%--<s:form action="/login/login_CheckLogin">--%>
     <%--<s:textfield name="account.accUid" key="user"/>--%>

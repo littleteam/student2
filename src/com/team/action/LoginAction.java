@@ -67,6 +67,8 @@ public class LoginAction extends ActionSupport {
         if (acDAO.CheckLogin(account)) {
             map.put("result", "ok");
             map.put("url", "index.jsp");
+            putSession();
+//            return "main_view";
         }  else {
             map.put("result", "error");
             // 将登陆信息存入session
@@ -81,6 +83,6 @@ public class LoginAction extends ActionSupport {
         ActionContext ctx = ActionContext.getContext();
         ctx.getSession().put("username", account.getAccUname());
         List<Account> acc=AccountDao.ShowAccount();
-        ctx.put("acclist",acc);
+        ctx.getSession().put("acclist",acc);
     }
 }

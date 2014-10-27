@@ -22,15 +22,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
     /*验证用户登录*/
     public boolean CheckLogin(Account account) {
         Session s = null;
-
-        //实例化Configuration，
-        Configuration conf = new Configuration()
-                //下面方法默认加载hibernate.cfg.xml文件
-                .configure();
-        //以Configuration创建SessionFactory
-        SessionFactory sf = conf.buildSessionFactory();
-        //创建Session
-        s = sf.openSession();
+        s=HibernateUtil.getSession();
         //开始事务
         Transaction tx =s.beginTransaction();
 
@@ -45,7 +37,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
             return false;
         }
         tx.commit();
-        s.close();
+        HibernateUtil.closeSession();
 
         return true;
     }
@@ -54,14 +46,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
         Session s = null;
         Transaction tx=null;
         try {
-            //实例化Configuration，
-            Configuration conf = new Configuration()
-                    //下面方法默认加载hibernate.cfg.xml文件
-                    .configure();
-            //以Configuration创建SessionFactory
-            SessionFactory sf = conf.buildSessionFactory();
-            //创建Session
-            s = sf.openSession();
+            s=HibernateUtil.getSession();
             //开始事务
             tx = s.beginTransaction();
             Account acc = (Account)s.get(Account.class,accuid);
@@ -74,7 +59,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
                 tx.rollback();
             throw e;
         } finally {
-            s.close();
+           HibernateUtil.closeSession();
         }
     }
    /*删除账号*/
@@ -82,14 +67,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
         Session s = null;
         Transaction tx=null;
         try {
-            //实例化Configuration，
-            Configuration conf = new Configuration()
-                    //下面方法默认加载hibernate.cfg.xml文件
-                    .configure();
-            //以Configuration创建SessionFactory
-            SessionFactory sf = conf.buildSessionFactory();
-            //创建Session
-            s = sf.openSession();
+            s=HibernateUtil.getSession();
             //开始事务
             tx = s.beginTransaction();
            Object acc = (Account)s.get(Account.class,accuid);
@@ -102,7 +80,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
                 tx.rollback();
             throw e;
         } finally {
-            s.close();
+           HibernateUtil.closeSession();
         }
     }
     public static ArrayList<Account> ShowAccount()
