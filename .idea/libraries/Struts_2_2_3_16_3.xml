@@ -16,65 +16,6 @@
       <root url="jar://$PROJECT_DIR$/lib/struts2-json-plugin-2.3.16.3.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/blank/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/blank/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/portlet/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/portlet/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/showcase/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/showcase/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/mailreader/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/rest-showcase/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/apps/rest-showcase/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/core/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/core/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/cdi/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/cdi/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/dwr/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/gxp/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/jsf/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/dojo/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/dojo/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/json/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/json/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/osgi/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/osgi/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/oval/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/oval/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/rest/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/rest/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/junit/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/junit/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/tiles/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/plexus/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/spring/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/spring/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/testng/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/testng/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/tiles3/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/portlet/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/portlet/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/struts1/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/struts1/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/sitemesh/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/sitegraph/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/sitegraph/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/codebehind/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/codebehind/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/convention/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/convention/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/jfreechart/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/jfreechart/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/embeddedjsp/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/embeddedjsp/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/jasperreports/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/javatemplates/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/javatemplates/src/test/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/portlet-tiles/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/config-browser/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/plugins/pell-multipart/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/xwork-core/src/main/java" />
-      <root url="jar://G:/各种安装包/SSH/struts-2.3.15.1-all.zip!/struts-2.3.15.1/src/xwork-core/src/test/java" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

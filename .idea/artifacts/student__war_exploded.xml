@@ -11,6 +11,7 @@
           <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
           <element id="library" level="project" name="Struts 2-2.3.16.3" />
           <element id="library" level="application" name="commons-beanutils-1.8.0" />
+          <element id="library" level="project" name="commons-beanutils-1.8.0" />
         </element>
       </element>
     </root>

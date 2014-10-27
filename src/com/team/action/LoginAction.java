@@ -54,6 +54,7 @@ public class LoginAction extends ActionSupport {
             ctx.put("error", java.net.URLEncoder.encode(acDAO.getErrMessage()));
             return "error";
         }
+
         ctx.getSession().put("username", account.getAccUname());
         List<Account> acc=AccountDao.ShowAccount();
         ctx.put("acclist",acc);
