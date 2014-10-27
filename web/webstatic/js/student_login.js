@@ -16,10 +16,12 @@ $().ready(function() {
            success: function (data) {
                // redirect
                var result = JSON.parse(data);
-               if(result.result == "ok")
-                   alert("ok");
-               else
+               if(result.result == "ok") {
+//                   alert("ok");
+                   window.location = "http://localhost:8080/" + result.url;
+               } else {
                    alert("dsf");
+               }
            }
        })
    })

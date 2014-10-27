@@ -6,18 +6,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.team.dao.AccountDao;
 import com.team.domain.Account;
 import net.sf.json.JSONObject;
-import org.apache.struts2.RequestUtils;
-import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.json.JSONException;
-import org.apache.struts2.json.JSONUtil;
-import org.apache.struts2.json.annotations.JSON;
-
-import javax.servlet.Servlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +17,6 @@ import java.util.List;
  */
 public class LoginAction extends ActionSupport {
     private Account account;
-
 
     public Account getAccount() {
         return account;
