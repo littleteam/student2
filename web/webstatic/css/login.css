@@ -50,7 +50,11 @@ footer div {
     padding: 40px;
     padding-bottom: 20px;
     font-family: Microsoft YaHei, fantasy;
-    font-size: normal;
+    font-size: 1em;
     color: #e5e5e5;
     text-align: center;
+}
+
+main {
+    min-height: 460px;
 }

@@ -17,7 +17,6 @@
         return;
     }
     String username=(String)session.getAttribute("username");
-    System.out.println(basePath);
 %>
 <html>
   <head>
@@ -35,12 +34,14 @@
   <body>
   <jsp:include page="header.jsp" />
 
-    <ol>
-        <li><%=accountInfoList.get(0).getAccUid()%></li>
-        <li><%=accountInfoList.get(0).getAccUname()%></li>
-        <li><%=accountInfoList.get(0).getAccPass()%></li>
-        <li><%=accountInfoList.get(0).getAccIsadmin()%></li>
-    </ol>
+  <main>
+      <ol>
+          <li><%=accountInfoList.get(0).getAccUid()%></li>
+          <li><%=accountInfoList.get(0).getAccUname()%></li>
+          <li><%=accountInfoList.get(0).getAccPass()%></li>
+          <li><%=accountInfoList.get(0).getAccIsadmin()%></li>
+      </ol>
+  </main>
   <jsp:include page="footer.jsp"/>
   </body>
 </html>
