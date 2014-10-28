@@ -19,3 +19,38 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px black;
 }
+
+body {
+    margin: 0;
+}
+header div {
+    background-color: #6f5499;
+    padding: 40px;
+    font-family: Microsoft YaHei, fantasy;
+    font-size: 2em;
+    color: white;
+}
+header span {
+    display: block;
+}
+.userName {
+    font-size: large;
+    float: right;
+}
+.userName a:hover, .userName a:focus {
+    color: white;
+}
+.userName a {
+    color: #cfcfcf;
+}
+
+footer div {
+    background-color: #8163B0;
+    /*height: 80px;*/
+    padding: 40px;
+    padding-bottom: 20px;
+    font-family: Microsoft YaHei, fantasy;
+    font-size: normal;
+    color: #e5e5e5;
+    text-align: center;
+}
