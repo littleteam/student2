@@ -24,7 +24,11 @@
 <body>
 <div class='loginDiv'>
     <div id="loginForm">
-        <div class="form-group" style="text-align: center;"><label style="font-size: x-large;">请登录</label></div>
+        <div class="form-group" style="text-align: center;">
+            <label style="font-size: x-large;">请登录</label>
+            <div id="wrongAccError" class="alert alert-danger" role="alert" style="display: none;"><strong>用户名密码不匹配</strong></div>
+            <div id="wrongAccEmpty" class="alert alert-danger" role="alert" style="display: none;"><strong>请输入用户名或密码</strong></div>
+        </div>
         <div class="form-group">
             <label for="uid" class="control-label">用户名</label>
             <input type="text" class="form-control" id="uid" placeholder="只能为数字">
