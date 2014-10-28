@@ -15,7 +15,7 @@ $().ready(function () {
                 _url = "/queryCourse";
                 break;
             case "密码修改":
-                _url  = "modifyInfo";
+                _url  = "/modifyInfo";
                 break;
         }
 

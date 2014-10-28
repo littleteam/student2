@@ -34,20 +34,6 @@ public class LoginAction extends ActionSupport {
     public void setResult(String result) {
         this.result = result;
     }
-
-    public String CheckLogin() {
-        AccountDao acDAO = new AccountDao();
-        ActionContext ctx = ActionContext.getContext();
-        if (!acDAO.CheckLogin(account)) {
-            ctx.put("error", java.net.URLEncoder.encode(acDAO.getErrMessage()));
-            return "error";
-        }
-
-        ctx.getSession().put("username", account.getAccUname());
-        List<Account> acc=AccountDao.ShowAccount();
-        ctx.put("acclist",acc);
-        return "main_view";
-    }
     public String Ajax() throws IOException {
         Map<String, String> map = new HashMap<String, String>();
         AccountDao acDAO = new AccountDao();
@@ -56,7 +42,6 @@ public class LoginAction extends ActionSupport {
             map.put("result", "ok");
             map.put("url", "index.jsp");
             putSession();
-//            return "main_view";
         }  else {
             map.put("result", "error");
             // 将登陆信息存入session

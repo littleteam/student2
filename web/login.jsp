@@ -40,10 +40,5 @@
         <button id="loginBtn" class="btn btn-default">登陆</button>
     </div>
 </div>
-<%--<s:form>--%>
-    <%--<s:textfield name="account.uid" label="用户名" />--%>
-    <%--<s:textfield name="account.accPass" label="密码" />--%>
-    <%--<s:submit id="loginBtn" value="登陆" />--%>
-<%--</s:form>--%>
 </body>
 
