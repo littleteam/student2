@@ -10,9 +10,9 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-    List<Account> accountInfoList = (List<Account>)request.getSession().getAttribute("acclist");
+   int state = (Integer)request.getSession().getAttribute("state");
     // redirect if haven't logged in
-    if(accountInfoList == null) {
+    if(state != 1) {
         response.sendRedirect("login.jsp");
         return;
     }

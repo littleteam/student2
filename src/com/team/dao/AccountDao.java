@@ -82,8 +82,21 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
            HibernateUtil.closeSession();
         }
     }
+    public static Account Showinfo(int accuid){
+        Session s = null;
+        Account ac=null;
+        try {
+            s=HibernateUtil.getSession();
+            ac=(Account)s.get(Account.class,accuid);
+
+            return ac;
+        }
+        finally {
+            HibernateUtil.closeSession();
+        }
+    }
     /*显示所有*/
-    public static ArrayList<Account> ShowAccount()
+    public static ArrayList<Account> ShowallAccount()
     {
         Session s = null;
         try {

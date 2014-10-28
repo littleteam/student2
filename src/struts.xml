@@ -17,7 +17,7 @@
         </action>
     </package>
     <package name="infoManagement" namespace="/" extends="struts-default, json-default">
-        <action name="query*" class="com.team.action.InfoManagement">
+        <action name="query*" class="com.team.action.InfoManagement" method="{1}">
             <result type="json">
                 <param name="root">result</param>
             </result>

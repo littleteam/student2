@@ -11,26 +11,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    List<Account> accountInfoList = (List<Account>)request.getSession().getAttribute("acclist");
+    int state = (Integer)request.getSession().getAttribute("state");
     // redirect if haven't logged in
-    if(accountInfoList == null) {
+    if(state != 1) {
         response.sendRedirect("login.jsp");
         return;
     }
-
-    Map<String, String> allFunctions = new HashMap<String, String>();
-    allFunctions.put("用户信息", "/userInfo");
-    allFunctions.put("课表查询", "/queryCourse");
-    allFunctions.put("密码修改", "/modifyInfo");
-    // 生成列表
-//    switch (accountInfoList.get(0).getAccIsadmin()) {
-//        case 0:
-//
-//            break;
-//        case 1:
-//            break;
-//        default:response.sendRedirect("/login.jsp");
-//    }
 %>
 <div id="main-left" class="list-group">
     <a href="#" class="list-group-item active">个人信息</a>
