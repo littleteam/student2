@@ -8,9 +8,7 @@ import com.team.domain.Account;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Query;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import com.team.until.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +49,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
             tx = s.beginTransaction();
             Account acc = (Account)s.get(Account.class,accuid);
             acc.setAccPass(accpass);
+            s.update(acc);
             tx.commit();
         }
         catch (HibernateException e)
@@ -83,6 +82,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
            HibernateUtil.closeSession();
         }
     }
+    /*显示所有*/
     public static ArrayList<Account> ShowAccount()
     {
         Session s = null;
