@@ -29,9 +29,7 @@ public class SchoolDao {
             tx.commit();
             return totalnum;
         }
-        catch (HibernateException e)
-        {
-        } finally {
+        finally {
             HibernateUtil.closeSession();
         }
     }
@@ -44,7 +42,7 @@ public class SchoolDao {
             tx=s.beginTransaction();
             String hql="select s.schId From School s where s.schName=:schname";
             Query q=s.createQuery(hql).setString("schname",schname);
-            schid=(int)q.list().get(0);
+            schid=(Integer)q.list().get(0);
             tx.commit();
             return schid;
         }
