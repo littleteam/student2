@@ -27,7 +27,7 @@
 
       <script type="text/javascript" src="webstatic/js/jquery-2.1.1.js"></script>
       <script type="text/javascript" src="webstatic/js/bootstrap.js"></script>
-      <script type="text/javascript" src="webstatic/js/student_login.js"></script>
+      <script type="text/javascript" src="webstatic/js/student_main.js"></script>
 
       <title></title>
   </head>
@@ -35,12 +35,18 @@
   <jsp:include page="header.jsp" />
 
   <main>
-      <ol>
-          <li><%=accountInfoList.get(0).getAccUid()%></li>
-          <li><%=accountInfoList.get(0).getAccUname()%></li>
-          <li><%=accountInfoList.get(0).getAccPass()%></li>
-          <li><%=accountInfoList.get(0).getAccIsadmin()%></li>
-      </ol>
+      <div style="width: 20%; float: left;">
+          <jsp:include page="main-left.jsp"/>
+      </div>
+      <div style="width: 80%; float: right;">
+          <jsp:include page="main-right.jsp"/>
+      </div>
+      <%--<ol>--%>
+          <%--<li><%=accountInfoList.get(0).getAccUid()%></li>--%>
+          <%--<li><%=accountInfoList.get(0).getAccUname()%></li>--%>
+          <%--<li><%=accountInfoList.get(0).getAccPass()%></li>--%>
+          <%--<li><%=accountInfoList.get(0).getAccIsadmin()%></li>--%>
+      <%--</ol>--%>
   </main>
   <jsp:include page="footer.jsp"/>
   </body>

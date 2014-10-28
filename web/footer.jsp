@@ -1,3 +1,5 @@
+<%@ page import="com.team.domain.Account" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: 斌
@@ -6,6 +8,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    List<Account> accountInfoList = (List<Account>)request.getSession().getAttribute("acclist");
+    // redirect if haven't logged in
+    if(accountInfoList == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <footer>
     <div>
         <p>

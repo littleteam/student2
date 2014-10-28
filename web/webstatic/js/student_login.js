@@ -7,6 +7,7 @@ function checkInput(errorCode) {
     if(errorCode) {
         accEmpty.hide();
         accErr.show();
+        $("#upass").val("");
         return false;
     }
 

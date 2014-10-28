@@ -1,10 +1,12 @@
 <%@ page import="com.team.domain.Account" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
 <%--
   Created by IntelliJ IDEA.
   User: 斌
   Date: 2014/10/28
-  Time: 11:07
+  Time: 15:55
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,9 +18,8 @@
         return;
     }
 %>
-<header>
-    <div>
-        <span>课程管理系统</span>
-        <span class="userName"><a href="#" title="查看信息">用户名</a></span>
-    </div>
-</header>
+<div id="main-right" class="list-group">
+    <a href="#" class="list-group-item active">个人信息</a>
+    <a href="#" class="list-group-item">课表查询</a>
+    <a href="#" class="list-group-item">密码修改</a>
+</div>

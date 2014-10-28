@@ -56,5 +56,23 @@ footer div {
 }
 
 main {
-    min-height: 460px;
+    min-height: 464px;
+}
+#main-left {
+    top: 120px;
+    width: 90px;
+    float: right;
+    position: relative;
+    margin-right: 20px;
+}
+#main-left a {
+    padding-top: 10px;
+}
+
+#main-right {
+    width: 80%;
+    float: left;
+    min-width: 800px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
