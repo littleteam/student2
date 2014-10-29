@@ -9,13 +9,13 @@ $().ready(function () {
         var _url;
         switch (elem){
             case "个人信息":
-                _url = "/queryInfo";
+                _url = "/QueryPerInfo";
                 break;
             case "课表查询":
-                _url = "/queryCourse";
+                _url = "/QueryListCourse";
                 break;
             case "密码修改":
-                _url  = "/modifyInfo";
+                _url  = "/QueryModifyPass";
                 break;
         }
 

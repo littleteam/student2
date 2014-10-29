@@ -23,13 +23,33 @@ public class InfoManagement extends ActionSupport {
     public void setResult(String result) {
         this.result = result;
     }
-    public String Info() throws IOException {
+
+    // 请求个人信息
+    public String PerInfo() throws IOException {
         Map<String, Object> map = new HashMap<String, Object>();
         AccountDao acDAO = new AccountDao();
         ActionContext ctx = ActionContext.getContext();
         map.put("userinfo",ctx.getSession().get("userinfo"));
         result = JSONObject.fromObject(map).toString();
         System.out.println(result);
+
+        return Action.SUCCESS;
+    }
+
+    // 请求查看课表
+    public String ListCourse() {
+
+        return Action.SUCCESS;
+    }
+
+    // 请求修改课表
+    public String ModifyCourse() {
+
+        return Action.SUCCESS;
+    }
+
+    // 请求修改密码
+    public String ModifyPass() {
 
         return Action.SUCCESS;
     }
