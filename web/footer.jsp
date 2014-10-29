@@ -9,9 +9,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    List<Account> accountInfoList = (List<Account>)request.getSession().getAttribute("acclist");
+    Integer state = (Integer)request.getSession().getAttribute("state");
     // redirect if haven't logged in
-    if(accountInfoList == null) {
+    if(state != 1) {
         response.sendRedirect("login.jsp");
         return;
     }

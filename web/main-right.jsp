@@ -11,7 +11,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    int state = (Integer)request.getSession().getAttribute("state");
+    Integer state = (Integer)request.getSession().getAttribute("state");
     // redirect if haven't logged in
     if(state != 1) {
         response.sendRedirect("login.jsp");

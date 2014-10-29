@@ -9,14 +9,14 @@
 <%@ page import="com.team.domain.Account" %>
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-   int state = (Integer)request.getSession().getAttribute("state");
+//    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+   Integer state = (Integer)request.getSession().getAttribute("state");
     // redirect if haven't logged in
     if(state != 1) {
         response.sendRedirect("login.jsp");
         return;
     }
-    String username=(String)session.getAttribute("username");
+//    String username=(String)session.getAttribute("username");
 %>
 <html>
   <head>
