@@ -81,7 +81,7 @@ public class InfoManagement extends ActionSupport {
         ActionContext ctx = ActionContext.getContext();
         AccountDao.ChangePass((Integer)ctx.getSession().get("accid"),newpasswd);
         Map<String,String> map = new HashMap<String, String>();
-        map.put("querlist",);
+//        map.put("querlist",);
         result = JSONObject.fromObject(map).toString();
         return Action.SUCCESS;
     }
