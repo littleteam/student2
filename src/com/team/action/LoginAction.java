@@ -39,6 +39,11 @@ public class LoginAction extends ActionSupport {
         this.result = result;
     }
 
+
+    public String Logout() {
+        return "logout";
+    }
+
     public String CheckLogin() {
         AccountDao acDAO = new AccountDao();
         ActionContext ctx = ActionContext.getContext();

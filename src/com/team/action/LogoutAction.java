@@ -12,5 +12,4 @@ import java.util.Map;
  */
 public class LogoutAction extends ActionSupport {
     ActionContext acx = ActionContext.getContext();
-
 }

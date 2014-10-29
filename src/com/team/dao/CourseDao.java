@@ -73,6 +73,7 @@ public class CourseDao {
             String hql = "From Course c where 1=1";
             if(null!=course)
             {
+                if(!course.getCouName().equals(""))  hql += " and c.couId='" + course.getCouId() + "'";
                 if(!course.getCouName().equals(""))  hql += " and c.couName='" + course.getCouName() + "'";
                 if(!course.getCouGrade().equals(0)) hql += " and c.couGrade='" + course.getCouGrade() + "'";
                 if(!course.getCouSchId().equals(0)) hql += " and c.couSchId='" + course.getCouSchId() + "'";

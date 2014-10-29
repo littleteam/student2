@@ -7,13 +7,14 @@
 <struts>
     <!-- 指定全局国际化资源文件 -->
     <constant name="struts.custom.i18n.resources" value="mess"/>
-    <package name="login" namespace="/login" extends="struts-default, json-default">
+    <package name="login" namespace="/" extends="struts-default, json-default">
         <action name="login_*" class="com.team.action.LoginAction" method="{1}">
             <result type="json">
                 <!--<param name="noCache">true</param>-->
                 <!--<param name="contentType">text/json</param>-->
                 <param name="root">result</param>
             </result>
+            <result name="logout">/login.jsp</result>
         </action>
     </package>
     <package name="infoManagement" namespace="/" extends="struts-default, json-default">
@@ -21,6 +22,10 @@
             <result type="json">
                 <param name="root">result</param>
             </result>
+            <result type="redirectAction" name="logout">
+                login_Logout
+            </result>
         </action>
     </package>
+
 </struts>

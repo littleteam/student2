@@ -39,7 +39,7 @@ $().ready(function () {
             return;
         }
         $.ajax({
-            url: "/login/login_Ajax",
+            url: "/login_Ajax",
             type: "POST",
             data: {"account.accUid": $("#uid").val(), "account.accPass": $("#upass").val()},
             cache: false,
