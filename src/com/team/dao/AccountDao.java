@@ -40,9 +40,10 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
         return true;
     }
     /*账号修改密码*/
-    public static void ChangePass(int accuid,String accpass) {
+    public static boolean ChangePass(int accuid,String accpass) {
         Session s = null;
         Transaction tx=null;
+        boolean is=false;
         try {
             s=HibernateUtil.getSession();
             //开始事务
@@ -51,6 +52,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
             acc.setAccPass(accpass);
             s.update(acc);
             tx.commit();
+            is=true;
         }
         catch (HibernateException e)
         {
@@ -60,6 +62,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
         } finally {
            HibernateUtil.closeSession();
         }
+        return is;
     }
    /*删除账号*/
     public static void DeleateAcc(int accuid){
