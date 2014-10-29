@@ -12,7 +12,7 @@
 //    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
    Integer state = (Integer)request.getSession().getAttribute("state");
     // redirect if haven't logged in
-    if(state != 1) {
+    if(state ==null || state != 1) {
         response.sendRedirect("login.jsp");
         return;
     }
