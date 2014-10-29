@@ -20,25 +20,27 @@
 %>
 <html>
   <head>
-      <link href="webstatic/css/bootstrap-theme.css" rel="stylesheet">
       <link href="webstatic/css/bootstrap.css" rel="stylesheet">
       <link href="webstatic/css/bootstrap-theme.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="webstatic/css/login.css">
+      <link rel="stylesheet" type="text/css" href="webstatic/css/jquery-ui.css">
 
       <script type="text/javascript" src="webstatic/js/jquery-2.1.1.js"></script>
       <script type="text/javascript" src="webstatic/js/bootstrap.js"></script>
       <script type="text/javascript" src="webstatic/js/student_main.js"></script>
+      <script type="text/javascript" src="webstatic/js/jquery-ui.js"></script>
+      <script type="text/javascript" src="webstatic/js/d3.js"></script>
 
       <title></title>
   </head>
   <body>
   <jsp:include page="header.jsp" />
 
-  <main>
+  <main class="clearfix">
       <div style="width: 20%; float: left;">
           <jsp:include page="main-left.jsp"/>
       </div>
-      <div style="width: 80%; float: right;">
+      <div style="width: 80%; float: right; padding-left: 60px;">
           <jsp:include page="main-right.jsp"/>
       </div>
       <%--<ol>--%>

@@ -59,11 +59,14 @@ main {
     min-height: 464px;
 }
 #main-left {
-    top: 120px;
-    width: 90px;
-    float: right;
-    position: relative;
-    margin-right: 20px;
+    /*top: 120px;*/
+    /*float: right;*/
+    /*margin-top: 120px;*/
+    position: fixed;
+    top: 200px;
+    width: 46px;
+    right: 80%;
+    /*margin-right: 20px;*/
 }
 #main-left a {
     padding-top: 10px;
@@ -75,4 +78,8 @@ main {
     min-width: 800px;
     margin-top: 20px;
     margin-left: 20px;
+}
+
+.table {
+    margin-bottom: 0;
 }

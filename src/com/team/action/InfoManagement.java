@@ -15,6 +15,16 @@ import java.util.Objects;
 /**
  * Created by 斌 on 2014/10/28.
  */
+
+
+enum RequestType{
+    PerRequest,     // 查看个人信息
+    ListCourse,     //查看课表
+    ModifyCourse,   //修改课程
+    ModifyPass      //修改密码
+}
+
+
 public class InfoManagement extends ActionSupport {
     private String result;
     public String getResult() {
@@ -29,6 +39,10 @@ public class InfoManagement extends ActionSupport {
         Map<String, Object> map = new HashMap<String, Object>();
         AccountDao acDAO = new AccountDao();
         ActionContext ctx = ActionContext.getContext();
+
+        // 添加请求类型
+        map.put("case", RequestType.PerRequest);
+
         map.put("userinfo",ctx.getSession().get("userinfo"));
         result = JSONObject.fromObject(map).toString();
         System.out.println(result);
