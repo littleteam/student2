@@ -9,16 +9,16 @@
             <column name="stu_id" sql-type="int" not-null="true"/>
         </id>
         <property name="stuName">
-            <column name="stu_name" sql-type="varchar" length="45"/>
+            <column name="stu_name" sql-type="varchar" length="45" not-null="true"/>
         </property>
         <property name="stuSex">
-            <column name="stu_sex" sql-type="varchar" length="45"/>
+            <column name="stu_sex" sql-type="varchar" length="45" not-null="true"/>
         </property>
         <property name="stuGrade">
-            <column name="stu_grade" sql-type="int"/>
+            <column name="stu_grade" sql-type="int" not-null="true"/>
         </property>
-        <property name="schId">
-            <column name="sch_id" sql-type="int"/>
+        <property name="schName">
+            <column name="sch_name" sql-type="varchar" length="45" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

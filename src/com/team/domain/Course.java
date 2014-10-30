@@ -8,6 +8,11 @@ public class Course {
     private String couName;
     private Integer couGrade;
     private Integer couSchId;
+    private String couSchName;
+
+    public void setCouGrade(int couGrade) {
+        this.couGrade = couGrade;
+    }
 
     public int getCouId() {
         return couId;
@@ -63,5 +68,13 @@ public class Course {
         result = 31 * result + (couGrade != null ? couGrade.hashCode() : 0);
         result = 31 * result + (couSchId != null ? couSchId.hashCode() : 0);
         return result;
+    }
+
+    public String getCouSchName() {
+        return couSchName;
+    }
+
+    public void setCouSchName(String couSchName) {
+        this.couSchName = couSchName;
     }
 }

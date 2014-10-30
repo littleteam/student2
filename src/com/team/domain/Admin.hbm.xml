@@ -12,10 +12,10 @@
             <column name="adm_name" sql-type="varchar" length="45" not-null="true"/>
         </property>
         <property name="admSex">
-            <column name="adm_sex" sql-type="varchar" length="45"/>
+            <column name="adm_sex" sql-type="varchar" length="45" not-null="true"/>
         </property>
-        <property name="schId">
-            <column name="sch_id" sql-type="int"/>
+        <property name="schName">
+            <column name="sch_name" sql-type="varchar" length="45" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

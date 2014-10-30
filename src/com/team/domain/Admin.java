@@ -8,6 +8,7 @@ public class Admin {
     private String admName;
     private String admSex;
     private Integer schId;
+    private String schName;
 
     public int getAdmId() {
         return admId;
@@ -63,5 +64,13 @@ public class Admin {
         result = 31 * result + (admSex != null ? admSex.hashCode() : 0);
         result = 31 * result + (schId != null ? schId.hashCode() : 0);
         return result;
+    }
+
+    public String getSchName() {
+        return schName;
+    }
+
+    public void setSchName(String schName) {
+        this.schName = schName;
     }
 }

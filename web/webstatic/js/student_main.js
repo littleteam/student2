@@ -38,6 +38,8 @@ function fillInfo(tbody, data) {
         });
 }
 function dealUserinfo(_data) {
+    isAdmin = _data.isAdmin;
+
     $("#userNameDropdown").text(_data.userinfo["stuId"]);
     var tbody = initTable("#userInfoTable",[], _data);
     fillInfo(tbody, _data);
@@ -75,11 +77,23 @@ function dealListCourse(_data) {
     main_right.append(userCourse);
 }
 
+function clearModifyPassForm() {
+    var oldPass = $("#oldPass");
+    var newPass = $("#newPass");
+    oldPass.val("");
+    newPass.val("");
+}
+
+// 修改密码
 function dealModifyPass() {
+    //清除表单内容
+    var oldPass = $("#oldPass");
+    var newPass = $("#newPass");
+
     $.ajax({
             url: "/QueryModifyPass",
             method: "POST",
-            data: {"oldPass": $("#oldPass").val(), "newPass": $("#newPass").val()},
+            data: {"oldPass": oldPass.val(), "newPass": newPass.val()},
             error: function () {
                 alert("请求异常");
             },
@@ -114,9 +128,11 @@ $().ready(function () {
             case "课表查询":
                 _url = "/QueryListCourse";
                 break;
-            case "密码修改":
-                _url  = "/QueryModifyPass";
-                break;
+//            case "密码修改":
+//                _url  = "/QueryModifyPass";
+//                break;
+            default:
+                return;
         }
 
         $.ajax({

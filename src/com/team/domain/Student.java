@@ -9,6 +9,11 @@ public class Student {
     private String stuSex;
     private Integer stuGrade;
     private Integer schId;
+    private String schName;
+
+    public void setStuGrade(int stuGrade) {
+        this.stuGrade = stuGrade;
+    }
 
     public int getStuId() {
         return stuId;
@@ -74,5 +79,13 @@ public class Student {
         result = 31 * result + (stuGrade != null ? stuGrade.hashCode() : 0);
         result = 31 * result + (schId != null ? schId.hashCode() : 0);
         return result;
+    }
+
+    public String getSchName() {
+        return schName;
+    }
+
+    public void setSchName(String schName) {
+        this.schName = schName;
     }
 }

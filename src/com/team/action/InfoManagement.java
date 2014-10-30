@@ -41,6 +41,9 @@ public class InfoManagement extends ActionSupport {
     public void setResult(String result) {
         this.result = result;
     }
+
+//    Map wordImage =
+
     //判断是否登陆
     public boolean islogin(){
         ActionContext ctx=ActionContext.getContext();
@@ -60,6 +63,7 @@ public class InfoManagement extends ActionSupport {
             map.put("case", RequestType.PerRequest);
 
             map.put("userinfo", ctx.getSession().get("userinfo"));
+            map.put("isAdmin", ctx.getSession().get("isadmin"));
             result = JSONObject.fromObject(map).toString();
             System.out.println(result);
             return Action.SUCCESS;

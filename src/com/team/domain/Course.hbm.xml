@@ -9,13 +9,13 @@
             <column name="cou_id" sql-type="int" not-null="true"/>
         </id>
         <property name="couName">
-            <column name="cou_name" sql-type="varchar" length="45"/>
+            <column name="cou_name" sql-type="varchar" length="45" not-null="true"/>
         </property>
         <property name="couGrade">
-            <column name="cou_grade" sql-type="int"/>
+            <column name="cou_grade" sql-type="int" not-null="true"/>
         </property>
-        <property name="couSchId">
-            <column name="cou_sch_id" sql-type="int"/>
+        <property name="couSchName">
+            <column name="cou_sch_name" sql-type="varchar" length="45" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

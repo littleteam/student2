@@ -25,10 +25,11 @@
             <a id="userNameDropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 loading...
             </a>
-                <span class="caret"></span>
+            <span class="caret"></span>
             <ul class="dropdown-menu" role="menu" aria-labelledby="userNameDropdown">
                 <%--<li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="dealModifyPass()">修改密码</a></li>--%>
-                <li role="presentation"><a type="button" role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#modifyPassModal">修改密码</a></li>
+                <li role="presentation"><a type="button" role="menuitem" tabindex="-1" href="#" data-toggle="modal"
+                    data-target="#modifyPassModal" onclick="clearModifyPassForm()">修改密码</a></li>
                 <li role="presentation" class="divider"></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="/login_Logout">注销登陆</a></li>
             </ul>
