@@ -46,14 +46,37 @@ function dealUserinfo(_data) {
 }
 
 function fillListCourse(tbody, _data) {
-
+    var rows = tbody.selectAll("tr")
+        .data(function () {
+            return _data.querylist;
+        })
+        .enter()
+        .append("tr");
+    var cells = rows.selectAll("td")
+        .data(function (row) {
+            var tmp = [];
+            for(var cell in row) {
+//                tmp.push(cell);
+                tmp.push(row[cell]);
+            }
+            return tmp;
+        })
+        .enter()
+        .append("td")
+        .text(function (d) {
+            return d;
+        })
 }
 
 function dealListCourse(_data) {
-    var tbody = initTable("#userListCourse", ["课程id", "课程名", "课程年级", "学院id"], _data);
+    var tbody = initTable("#userCourseTable", ["课程年级", "课程id", "课程名", "学院id"], _data);
     fillListCourse(tbody, _data);
     main_right.empty();
     main_right.append(userCourse);
+}
+
+function dealModifyPass() {
+
 }
 
 $().ready(function () {
@@ -98,7 +121,7 @@ $().ready(function () {
                             dealUserinfo(_data);
                             break;
                         case RequestType.ListCourse:
-
+                            dealListCourse(_data);
                             break;
                         case RequestType.ModifyCourse:
                             break;
@@ -109,6 +132,7 @@ $().ready(function () {
             }
         );
     });
+    $("a:first-child", "#main-left").click();
 });
 RequestType={
     PerRequest	: "PerRequest",

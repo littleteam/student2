@@ -83,3 +83,6 @@ main {
 .table {
     margin-bottom: 0;
 }
+#userCourse thead{
+    border-top: 2px solid rgb(221, 221, 221);
+}

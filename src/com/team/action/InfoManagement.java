@@ -65,7 +65,7 @@ public class InfoManagement extends ActionSupport {
         Map<String, Object> map = new HashMap<String, Object>();
         CourseDao courdao=new CourseDao();
         ActionContext ctx = ActionContext.getContext();
-        map.put("querlist", courdao.Query(course));
+        map.put("querylist", courdao.Query(course));
         map.put("case",RequestType.ListCourse);
         result = JSONObject.fromObject(map).toString();
         System.out.println(result);
