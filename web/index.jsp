@@ -24,6 +24,7 @@
       <link href="webstatic/css/bootstrap-theme.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="webstatic/css/login.css">
       <link rel="stylesheet" type="text/css" href="webstatic/css/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="webstatic/css/animate.css">
 
       <script type="text/javascript" src="webstatic/js/jquery-2.1.1.js"></script>
       <script type="text/javascript" src="webstatic/js/bootstrap.js"></script>
