@@ -5,15 +5,6 @@ package com.team.domain;
  */
 public class Student {
     private int stuId;
-    private String stuName;
-    private String stuSex;
-    private Integer stuGrade;
-    private Integer schId;
-    private String schName;
-
-    public void setStuGrade(int stuGrade) {
-        this.stuGrade = stuGrade;
-    }
 
     public int getStuId() {
         return stuId;
@@ -47,13 +38,10 @@ public class Student {
         this.stuGrade = stuGrade;
     }
 
-    public Integer getSchId() {
-        return schId;
-    }
-
-    public void setSchId(Integer schId) {
-        this.schId = schId;
-    }
+    private String stuName;
+    private String stuSex;
+    private Integer stuGrade;
+    private String schName;
 
     @Override
     public boolean equals(Object o) {
@@ -63,7 +51,6 @@ public class Student {
         Student student = (Student) o;
 
         if (stuId != student.stuId) return false;
-        if (schId != null ? !schId.equals(student.schId) : student.schId != null) return false;
         if (stuGrade != null ? !stuGrade.equals(student.stuGrade) : student.stuGrade != null) return false;
         if (stuName != null ? !stuName.equals(student.stuName) : student.stuName != null) return false;
         if (stuSex != null ? !stuSex.equals(student.stuSex) : student.stuSex != null) return false;
@@ -77,7 +64,6 @@ public class Student {
         result = 31 * result + (stuName != null ? stuName.hashCode() : 0);
         result = 31 * result + (stuSex != null ? stuSex.hashCode() : 0);
         result = 31 * result + (stuGrade != null ? stuGrade.hashCode() : 0);
-        result = 31 * result + (schId != null ? schId.hashCode() : 0);
         return result;
     }
 

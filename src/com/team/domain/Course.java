@@ -5,14 +5,6 @@ package com.team.domain;
  */
 public class Course {
     private int couId;
-    private String couName;
-    private Integer couGrade;
-    private Integer couSchId;
-    private String couSchName;
-
-    public void setCouGrade(int couGrade) {
-        this.couGrade = couGrade;
-    }
 
     public int getCouId() {
         return couId;
@@ -38,13 +30,10 @@ public class Course {
         this.couGrade = couGrade;
     }
 
-    public Integer getCouSchId() {
-        return couSchId;
-    }
+    private String couName;
+    private Integer couGrade;
+    private String couSchName;
 
-    public void setCouSchId(Integer couSchId) {
-        this.couSchId = couSchId;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -56,7 +45,6 @@ public class Course {
         if (couId != course.couId) return false;
         if (couGrade != null ? !couGrade.equals(course.couGrade) : course.couGrade != null) return false;
         if (couName != null ? !couName.equals(course.couName) : course.couName != null) return false;
-        if (couSchId != null ? !couSchId.equals(course.couSchId) : course.couSchId != null) return false;
 
         return true;
     }
@@ -66,7 +54,6 @@ public class Course {
         int result = couId;
         result = 31 * result + (couName != null ? couName.hashCode() : 0);
         result = 31 * result + (couGrade != null ? couGrade.hashCode() : 0);
-        result = 31 * result + (couSchId != null ? couSchId.hashCode() : 0);
         return result;
     }
 

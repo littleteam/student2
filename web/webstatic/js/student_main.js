@@ -1,46 +1,44 @@
 /**
  * Created by 斌 on 2014/10/28.
  */
-//function dealResult(data) {
-//    if(undefined == data) {
-//        return;
-//    }
-//
-//    // 确定调用者
-//    var obj = JSON.parse(String(data));
-//    if(undefined == obj.userinfo) {
-//        dealUserinfo(data);
-//        return;
-//    }
-////    if(undefined == obj)
-//}
-
 function fillInfo(tbody, data) {
     var rows =  tbody.selectAll("tr")
         .data(function () {
             var cells = [];
             for(var cell in data.userinfo){
-//                cells.push({value: data.userinfo[cell]});
                 cells.push([cell, data.userinfo[cell]]);
             }
             return cells;
         })
         .enter()
         .append("tr");
-    var cells = rows.selectAll("td")
+    rows.selectAll("td")
         .data(function (row) {
             return row;
         })
         .enter()
         .append("td")
         .text(function (d) {
+            if(wordImage[d]){
+                return wordImage[d];
+            }
             return d;
         });
 }
+wordImage = {
+    admId: "用户ID",
+    admName: "姓名",
+    admSex: "性别",
+    schName: "学院"
+};
+
 function dealUserinfo(_data) {
     isAdmin = _data.isAdmin;
-
-    $("#userNameDropdown").text(_data.userinfo["stuId"]);
+    if(isAdmin) {
+        $("#userNameDropdown").text(_data.userinfo["admId"]);
+    } else {
+        $("#userNameDropdown").text(_data.userinfo["stuId"]);
+    }
     var tbody = initTable("#userInfoTable",[], _data);
     fillInfo(tbody, _data);
     main_right.empty();
@@ -54,24 +52,26 @@ function fillListCourse(tbody, _data) {
         })
         .enter()
         .append("tr");
-    var cells = rows.selectAll("td")
+    rows.selectAll("td")
         .data(function (row) {
             var tmp = [];
             for(var cell in row) {
-//                tmp.push(cell);
                 tmp.push(row[cell]);
             }
             return tmp;
         })
         .enter()
         .append("td")
-        .text(function (d) {
-            return d;
-        })
+//        .text(function (d) {
+//            return d;
+//        })
+        .append("input")
+        .attr("class", "form-control");
+//        .val()
 }
 
 function dealListCourse(_data) {
-    var tbody = initTable("#userCourseTable", ["课程年级", "课程id", "课程名", "学院id"], _data);
+    var tbody = initTable("#userCourseTable", ["课程年级", "课程", "课程名ID", "所在学院"], _data);
     fillListCourse(tbody, _data);
     main_right.empty();
     main_right.append(userCourse);
@@ -107,6 +107,7 @@ function dealModifyPass() {
 }
 
 $().ready(function () {
+    $("body").addClass("animated fadeInUpBig");
 
     main_right = $("#main-right");
 

@@ -40,5 +40,7 @@
         <button id="loginBtn" class="btn btn-default">登陆</button>
     </div>
 </div>
+<script>
+</script>
 </body>
 

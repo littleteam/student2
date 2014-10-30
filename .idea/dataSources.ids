@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - @10.18.5.212" uuid="a8118b54-239c-4683-a65b-d3cc1def6fcf">
+  <data-source source="LOCAL" name="MySQL - stu@10.18.5.212" uuid="a8118b54-239c-4683-a65b-d3cc1def6fcf">
     <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -727,29 +727,27 @@
     <table name="admin" schema="" catalog="stu" type="TABLE">
       <column name="adm_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="adm_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="adm_sex" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="sch_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="adm_sex" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sch_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="adm_id"/>
     </table>
     <table name="course" schema="" catalog="stu" type="TABLE">
       <column name="cou_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cou_name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="cou_grade" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="cou_sch_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cou_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cou_grade" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cou_sch_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="cou_id"/>
-    </table>
-    <table name="school" schema="" catalog="stu" type="TABLE">
-      <column name="sch_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="sch_name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="sch_id"/>
+      <index name="cou_sch_id_idx" unique="false" columns="cou_sch_name"/>
+      <index name="sch_id_idx" unique="false" columns="cou_sch_name"/>
     </table>
     <table name="student" schema="" catalog="stu" type="TABLE">
       <column name="stu_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="stu_name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="stu_sex" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="stu_grade" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="sch_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="stu_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="stu_sex" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="stu_grade" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sch_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="stu_id"/>
+      <index name="stu_schid_fk_idx" unique="false" columns="sch_name"/>
     </table>
   </data-source>
 </component>

@@ -7,7 +7,6 @@ public class Admin {
     private int admId;
     private String admName;
     private String admSex;
-    private Integer schId;
     private String schName;
 
     public int getAdmId() {
@@ -34,14 +33,6 @@ public class Admin {
         this.admSex = admSex;
     }
 
-    public Integer getSchId() {
-        return schId;
-    }
-
-    public void setSchId(Integer schId) {
-        this.schId = schId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -52,7 +43,6 @@ public class Admin {
         if (admId != admin.admId) return false;
         if (admName != null ? !admName.equals(admin.admName) : admin.admName != null) return false;
         if (admSex != null ? !admSex.equals(admin.admSex) : admin.admSex != null) return false;
-        if (schId != null ? !schId.equals(admin.schId) : admin.schId != null) return false;
 
         return true;
     }
@@ -62,7 +52,6 @@ public class Admin {
         int result = admId;
         result = 31 * result + (admName != null ? admName.hashCode() : 0);
         result = 31 * result + (admSex != null ? admSex.hashCode() : 0);
-        result = 31 * result + (schId != null ? schId.hashCode() : 0);
         return result;
     }
 

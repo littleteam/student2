@@ -76,7 +76,6 @@ public class CourseDao {
                 if(!course.getCouName().equals(""))  hql += " and c.couId='" + course.getCouId() + "'";
                 if(!course.getCouName().equals(""))  hql += " and c.couName='" + course.getCouName() + "'";
                 if(!course.getCouGrade().equals(0)) hql += " and c.couGrade='" + course.getCouGrade() + "'";
-                if(!course.getCouSchId().equals(0)) hql += " and c.couSchId='" + course.getCouSchId() + "'";
             }
             Query q = s.createQuery(hql);
             /*计算当前显示页码的开始记录*/

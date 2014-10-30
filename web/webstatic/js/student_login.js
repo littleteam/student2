@@ -26,7 +26,9 @@ function checkInput(errorCode) {
     return false;
 }
 
+
 $().ready(function () {
+
     accErr = $("#wrongAccError");
     accEmpty = $("#wrongAccEmpty");
 
@@ -58,5 +60,11 @@ $().ready(function () {
                 }
             }
         })
+    });
+
+    $("input", ".form-group").on("keydown", function(e){
+        if(e.keyCode == 13){
+            $("#loginBtn").click();
+        }
     });
 });

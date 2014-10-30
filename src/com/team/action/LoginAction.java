@@ -85,11 +85,11 @@ public class LoginAction extends ActionSupport {
         ctx.getSession().put("state",1);
         Admin admin=null;
         Student stu=null;
-        if(account.getAccIsadmin()==1){
+        if(ac.getAccIsadmin()==1){
             admin=AdminDao.Showinfo(ac.getAccUid());
             ctx.getSession().put("userinfo",admin);
         }
-        else if(account.getAccIsadmin()==0){
+        else if(ac.getAccIsadmin()==0){
             stu= StudentDao.Showinfo(ac.getAccUid());
             ctx.getSession().put("userinfo",stu);
         }

@@ -30,6 +30,11 @@ enum RequestType{
 
 
 public class InfoManagement extends ActionSupport {
+
+    Map<String, String> wordImage = new HashMap<String, String>();
+    public InfoManagement() {
+    }
+
     private String result;
     private Course course;
 
@@ -60,8 +65,6 @@ public class InfoManagement extends ActionSupport {
         this.result = result;
     }
 
-//    Map wordImage =
-
 
     //判断是否登陆
     public boolean islogin() {
@@ -79,6 +82,7 @@ public class InfoManagement extends ActionSupport {
             // 添加请求类型
             map.put("case", RequestType.PerRequest);
 
+            map.put("isAdmin", ctx.getSession().get("isadmin"));
             map.put("userinfo", ctx.getSession().get("userinfo"));
             result = JSONObject.fromObject(map).toString();
             System.out.println(result);
