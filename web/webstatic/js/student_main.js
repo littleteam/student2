@@ -84,7 +84,8 @@ function dealModifyPass() {
                 alert("请求异常");
             },
             success: function (data) {
-                var result = data.result;
+                var _data = JSON.parse(data);
+                var result = _data.result;
                 alert(result);
             }
         }
