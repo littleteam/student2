@@ -32,7 +32,8 @@ enum RequestType{
 public class InfoManagement extends ActionSupport {
     private String result;
     private Course course;
-    private String newpasswd;
+    private String newPass;
+    private String oldPass;
     private ArrayList<Course> courselist;
     public String getResult() {
         return result;
@@ -98,12 +99,17 @@ public class InfoManagement extends ActionSupport {
 
     // 请求修改密码
     public String ModifyPass() {
+        String presult;
         if (islogin()) {
             ActionContext ctx = ActionContext.getContext();
-            AccountDao.ChangePass((Integer) ctx.getSession().get("accid"), newpasswd);
-            Map<String, Object> map = new HashMap<String, Object>();
+           if( AccountDao.ChangePass((Integer) ctx.getSession().get("accid"), oldPass,newPass))
+                presult="ok";
+           else
+               presult="error";
+           Map<String, Object> map = new HashMap<String, Object>();
 //        map.put("querlist",);
             map.put("case", RequestType.ListCourse);
+            map.put("result",presult);
             result = JSONObject.fromObject(map).toString();
             return Action.SUCCESS;
         } else
