@@ -40,53 +40,73 @@ public class InfoManagement extends ActionSupport {
     public void setResult(String result) {
         this.result = result;
     }
-
+    //判断是否登陆
+    public boolean islogin(){
+        ActionContext ctx=ActionContext.getContext();
+        if((Integer)ctx.getSession().get("state")!=1)
+        return false;
+        else
+        return true;
+    }
     // 请求个人信息
     public String PerInfo() throws IOException {
-        Map<String, Object> map = new HashMap<String, Object>();
-        AccountDao acDAO = new AccountDao();
-        ActionContext ctx = ActionContext.getContext();
+        if(islogin()) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            AccountDao acDAO = new AccountDao();
+            ActionContext ctx = ActionContext.getContext();
 
-        // 添加请求类型
-        map.put("case", RequestType.PerRequest);
+            // 添加请求类型
+            map.put("case", RequestType.PerRequest);
 
-        map.put("userinfo",ctx.getSession().get("userinfo"));
-        result = JSONObject.fromObject(map).toString();
-        System.out.println(result);
-
-        return Action.SUCCESS;
+            map.put("userinfo", ctx.getSession().get("userinfo"));
+            result = JSONObject.fromObject(map).toString();
+            System.out.println(result);
+            return Action.SUCCESS;
+        }
+        else return "logout";
     }
 
     // 请求查看课表
     public String ListCourse() {
 
-        // todo: 添加认证
 
-        Map<String, Object> map = new HashMap<String, Object>();
-        CourseDao courdao=new CourseDao();
-        ActionContext ctx = ActionContext.getContext();
-        map.put("querlist", courdao.Query(course));
-        map.put("case",RequestType.ListCourse);
-        result = JSONObject.fromObject(map).toString();
-        System.out.println(result);
+        if(islogin()) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            CourseDao courdao = new CourseDao();
+            ActionContext ctx = ActionContext.getContext();
+            map.put("querlist", courdao.Query(course));
+            map.put("case", RequestType.ListCourse);
+            result = JSONObject.fromObject(map).toString();
+            System.out.println(result);
 
-        return Action.SUCCESS;
+            return Action.SUCCESS;
+        }
+        else
+            return "logout";
     }
 
     // 请求修改课表
     public String ModifyCourse() {
-        CourseDao coudao=new CourseDao();
+        if(islogin()) {
+            CourseDao coudao = new CourseDao();
 
-        return Action.SUCCESS;
+            return Action.SUCCESS;
+        }
+        else
+            return "logout";
     }
 
     // 请求修改密码
     public String ModifyPass() {
-        ActionContext ctx = ActionContext.getContext();
-        AccountDao.ChangePass((Integer)ctx.getSession().get("accid"),newpasswd);
-        Map<String,String> map = new HashMap<String, String>();
+        if (islogin()) {
+            ActionContext ctx = ActionContext.getContext();
+            AccountDao.ChangePass((Integer) ctx.getSession().get("accid"), newpasswd);
+            Map<String, Object> map = new HashMap<String, Object>();
 //        map.put("querlist",);
-        result = JSONObject.fromObject(map).toString();
-        return Action.SUCCESS;
+            map.put("case", RequestType.ListCourse);
+            result = JSONObject.fromObject(map).toString();
+            return Action.SUCCESS;
+        } else
+            return "logout";
     }
 }

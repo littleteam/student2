@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - stu@10.18.5.212" uuid="6befbb8a-10a9-44a3-bd13-737776803051">
+  <data-source source="LOCAL" name="MySQL - @10.18.5.212" uuid="a8118b54-239c-4683-a65b-d3cc1def6fcf">
     <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -751,8 +751,5 @@
       <column name="sch_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="stu_id"/>
     </table>
-  </data-source>
-  <data-source source="LOCAL" name="MySQL - @localhost" uuid="e4fb5d68-8dbc-4d3e-b8ad-f7ff926e746f">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>
