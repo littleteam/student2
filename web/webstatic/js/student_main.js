@@ -38,7 +38,7 @@ function fillInfo(tbody, data) {
         });
 }
 function dealUserinfo(_data) {
-
+    $("#userNameDropdown").text(_data.userinfo["stuId"]);
     var tbody = initTable("#userInfoTable",[], _data);
     fillInfo(tbody, _data);
     main_right.empty();
@@ -76,7 +76,19 @@ function dealListCourse(_data) {
 }
 
 function dealModifyPass() {
-
+    $.ajax({
+            url: "/QueryModifyPass",
+            method: "POST",
+            data: {"oldPass": $("#oldPass").val(), "newPass": $("#newPass").val()},
+            error: function () {
+                alert("请求异常");
+            },
+            success: function (data) {
+                var result = data.result;
+                alert(result);
+            }
+        }
+    );
 }
 
 $().ready(function () {

@@ -86,3 +86,7 @@ main {
 #userCourse thead{
     border-top: 2px solid rgb(221, 221, 221);
 }
+.open > .dropdown-menu {
+    text-align: center;
+    min-width: 120px;
+}

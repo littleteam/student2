@@ -19,6 +19,19 @@
 <header>
     <div>
         <span>课程管理系统</span>
-        <span class="userName"><a href="#" title="查看信息">用户名</a></span>
+        <script type="text/javascript">
+        </script>
+        <span class="userName dropdown">
+            <a id="userNameDropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                loading...
+            </a>
+                <span class="caret"></span>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="userNameDropdown">
+                <%--<li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="dealModifyPass()">修改密码</a></li>--%>
+                <li role="presentation"><a type="button" role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#modifyPassModal">修改密码</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/login_Logout">注销登陆</a></li>
+            </ul>
+        </span>
     </div>
 </header>
