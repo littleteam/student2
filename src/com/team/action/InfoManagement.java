@@ -21,7 +21,7 @@ import java.util.Objects;
  */
 
 
-enum RequestType{
+enum RequestType {
     PerRequest,     // 查看个人信息
     ListCourse,     //查看课表
     ModifyCourse,   //修改课程
@@ -32,26 +32,48 @@ enum RequestType{
 public class InfoManagement extends ActionSupport {
     private String result;
     private Course course;
+
+    public String getNewPass() {
+        return newPass;
+    }
+
+    public void setNewPass(String newPass) {
+        this.newPass = newPass;
+    }
+
     private String newPass;
+
+    public String getOldPass() {
+        return oldPass;
+    }
+
+    public void setOldPass(String oldPass) {
+        this.oldPass = oldPass;
+    }
+
     private String oldPass;
     private ArrayList<Course> courselist;
+
     public String getResult() {
         return result;
     }
+
     public void setResult(String result) {
         this.result = result;
     }
+
     //判断是否登陆
-    public boolean islogin(){
-        ActionContext ctx=ActionContext.getContext();
-        if((Integer)ctx.getSession().get("state")!=1)
-        return false;
+    public boolean islogin() {
+        ActionContext ctx = ActionContext.getContext();
+        if ((Integer) ctx.getSession().get("state") != 1)
+            return false;
         else
-        return true;
+            return true;
     }
+
     // 请求个人信息
     public String PerInfo() throws IOException {
-        if(islogin()) {
+        if (islogin()) {
             Map<String, Object> map = new HashMap<String, Object>();
             AccountDao acDAO = new AccountDao();
             ActionContext ctx = ActionContext.getContext();
@@ -63,15 +85,14 @@ public class InfoManagement extends ActionSupport {
             result = JSONObject.fromObject(map).toString();
             System.out.println(result);
             return Action.SUCCESS;
-        }
-        else return "logout";
+        } else return "logout";
     }
 
     // 请求查看课表
     public String ListCourse() {
 
 
-        if(islogin()) {
+        if (islogin()) {
             Map<String, Object> map = new HashMap<String, Object>();
             CourseDao courdao = new CourseDao();
             ActionContext ctx = ActionContext.getContext();
@@ -81,19 +102,17 @@ public class InfoManagement extends ActionSupport {
             System.out.println(result);
 
             return Action.SUCCESS;
-        }
-        else
+        } else
             return "logout";
     }
 
     // 请求修改课表
     public String ModifyCourse() {
-        if(islogin()) {
+        if (islogin()) {
             CourseDao coudao = new CourseDao();
 
             return Action.SUCCESS;
-        }
-        else
+        } else
             return "logout";
     }
 
@@ -102,17 +121,18 @@ public class InfoManagement extends ActionSupport {
         String presult;
         if (islogin()) {
             ActionContext ctx = ActionContext.getContext();
-           if( AccountDao.ChangePass((Integer) ctx.getSession().get("accid"), oldPass,newPass))
-                presult="ok";
-           else
-               presult="error";
-           Map<String, Object> map = new HashMap<String, Object>();
+            if (AccountDao.ChangePass((Integer) ctx.getSession().get("accid"), oldPass, newPass))
+                presult = "ok";
+            else
+                presult = "error";
+            Map<String, Object> map = new HashMap<String, Object>();
 //        map.put("querlist",);
             map.put("case", RequestType.ListCourse);
-            map.put("result",presult);
+            map.put("result", presult);
             result = JSONObject.fromObject(map).toString();
             return Action.SUCCESS;
         } else
             return "logout";
     }
+
 }
