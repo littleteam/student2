@@ -49,7 +49,7 @@ public class AccountDao {/*保存业务逻辑错误信息字段*/
             //开始事务
             tx = s.beginTransaction();
             Account acc = (Account)s.get(Account.class,accuid);
-            if(acc.getAccPass()==oldPass) {
+            if(acc.getAccPass().equals(oldPass)) {
                 acc.setAccPass(newPass);
                 s.update(acc);
                 is=true;
