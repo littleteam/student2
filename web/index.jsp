@@ -39,13 +39,14 @@
       <link rel="stylesheet" type="text/css" href="webstatic/css/login.css">
       <link rel="stylesheet" type="text/css" href="webstatic/css/jquery-ui.css">
       <link rel="stylesheet" type="text/css" href="webstatic/css/animate.css">
+      <link rel="stylesheet" type="text/css" href="webstatic/css/sweet-alert.css">
 
       <script type="text/javascript" src="webstatic/js/jquery-2.1.1.js"></script>
       <script type="text/javascript" src="webstatic/js/bootstrap.js"></script>
       <script type="text/javascript" src="webstatic/js/student_main.js"></script>
       <script type="text/javascript" src="webstatic/js/jquery-ui.js"></script>
       <script type="text/javascript" src="webstatic/js/d3.js"></script>
-
+      <script type="text/javascript" src="webstatic/js/sweet-alert.js"></script>
       <title></title>
   </head>
   <body>
