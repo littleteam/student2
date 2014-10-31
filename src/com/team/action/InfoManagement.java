@@ -151,9 +151,22 @@ public class InfoManagement extends ActionSupport {
                 if(joob.get("couOperate").equals("delete"))
                 {
                     CourseDao.Deleate( Integer.parseInt(joob.get("couID").toString()));
+
                 }
                 else if(joob.get("couOperate").equals("modify")){
+                    cou.setCouId( Integer.parseInt(joob.get("couID").toString()));
+                    cou.setCouGrade(Integer.parseInt(joob.get("couGrade").toString()));
+                    cou.setCouName(joob.get("couName").toString());
+                    cou.setCouSchName(joob.get("couSchName").toString());
 
+                    CourseDao.Changeinfo(cou);
+                }
+                else if(joob.get("couOperate").equals("added")){
+                    cou.setCouId( Integer.parseInt(joob.get("couID").toString()));
+                    cou.setCouGrade(Integer.parseInt(joob.get("couGrade").toString()));
+                    cou.setCouName(joob.get("couName").toString());
+                    cou.setCouSchName(joob.get("couSchName").toString());
+                    CourseDao.Addinfo(cou);
                 }
             }
             map.put("querylist",CourseDao.Query(cou));
