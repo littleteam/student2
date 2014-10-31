@@ -296,7 +296,7 @@ function dealListCourse(_data) {
         tr.attr("class", "modified");
     });
 }
-// 清除修改密码modal内文本框内容
+
 function clearModifyPassForm() {
     var oldPass = $("#oldPass");
     var newPass = $("#newPass");
@@ -304,7 +304,7 @@ function clearModifyPassForm() {
     newPass.val("");
 }
 
-// 修改密码事件
+// 修改密码
 function dealModifyPass() {
     //清除表单内容
     var oldPass = $("#oldPass");
@@ -325,7 +325,7 @@ function dealModifyPass() {
         }
     );
 }
-// 页面ready加载, 绑定事件
+
 $().ready(function () {
     $("body").addClass("animated fadeInUpBig");
 
@@ -361,7 +361,7 @@ $().ready(function () {
 
         $.ajax({
                 url: _url,
-                method: "POST",
+                method: "get",
                 error: function () {
                     alert("请求异常");
                 },
@@ -381,15 +381,11 @@ $().ready(function () {
                             break;
                         case RequestType.ModifyPass:
                             break;
-                        default :// 处理出现问题,停止执行.
-                            return;
-                    } // end_switch
-                } // end_success
+                    }
+                }
             }
-        ); // end_ajax
-    }); // end_a_click
-
-    // 激活第一个按钮
+        );
+    });
     $("a:first-child", "#main-left").click();
 });
 RequestType = {
@@ -399,8 +395,7 @@ RequestType = {
     ModifyPass: "ModifyPass"
 };
 
-// 初始化表格,返回tbody,d3.js
-function initTable(selector, disPlayHeader) {
+function initTable(selector, disPlayHeader, data, caseID) {
     $(selector).empty();
     var table = d3.select(selector);
 
