@@ -38,7 +38,6 @@ public class CourseDao {
             tx=s.beginTransaction();
             Course c=(Course)s.get(Course.class,couid);
             s.delete(c);
-            s.flush();
             tx.commit();
 
         }

@@ -169,7 +169,6 @@ public class InfoManagement extends ActionSupport {
                     CourseDao.Addinfo(cou);
                 }
             }
-            map.put("querylist",CourseDao.Query(cou));
             map.put("result", "ok");
             result = JSONObject.fromObject(map).toString();
             return Action.SUCCESS;
