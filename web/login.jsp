@@ -37,7 +37,7 @@
             <label for="upass" class="control-label">密码</label>
             <input type="password" class="form-control" id="upass" placeholder="">
         </div>
-        <button id="loginBtn" class="btn btn-default">登陆</button>
+        <div class="form-group" id="divLoginBtn"><button id="loginBtn" class="btn btn-primary">登陆</button></div>
     </div>
 </div>
 <script>

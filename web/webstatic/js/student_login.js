@@ -42,6 +42,7 @@ $().ready(function () {
         if(!checkInput()) {
             return;
         }
+        $("#loginBtn").text("登陆中...");
         $.ajax({
             url: "/login_Ajax",
             type: "POST",
@@ -49,17 +50,19 @@ $().ready(function () {
             cache: false,
             asycn: true,
             error: function () {
-                alert('请求异常');
+                sweetAlert("Oops...", "请求异常", "error");
+                $("#loginBtn").text("登陆");
             },
             success: function (data) {
                 // redirect
                 var result = JSON.parse(data);
                 if (result.result == "ok") {
                     $("#loginForm").attr("class", "");
-                    window.location = "http://localhost:8080/" + result.url;
+                    window.location = "/" + result.url;
                 } else {
                     checkInput(1);
                 }
+                $("#loginBtn").text("登陆");
             }
         })
     });

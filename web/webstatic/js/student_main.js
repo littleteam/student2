@@ -45,6 +45,7 @@ function dealUserinfo(_data) {
     fillInfo(tbody, _data);
     main_right.empty();
     main_right.append(userInfo);
+    userInfo.attr("class","animated fadeIn");
 }
 // 填充 查看课程 表格
 function fillListCourse(tbody, _data) {
@@ -206,7 +207,7 @@ function dealCourseDataTrans() {
 // 处理 课程 提交事件
 function courseSubmit() {
     if(isLastTrHasNull()){
-        //todo: 显示提示,不能为空;
+        // 显示提示,不能为空;
         sweetAlert("Oops...", "尚未完成此记录添加", "error");
         return ;
     }
@@ -231,7 +232,7 @@ function courseSubmit() {
                 method: "POST",
                 async: true,
                 error: function () {
-                    alert("请求异常");
+                    sweetAlert("Oops...", "请求异常", "error");
                 },
                 success: function (data) {
                     var _data = JSON.parse(data);
@@ -276,6 +277,7 @@ function dealListCourse(_data) {
     var tbody = initTable($("#userCourseTable", userCourse)[0], ["课程年级", "课程ID", "课程名", "所在学院", ""], _data);
     fillListCourse(tbody, _data);
     main_right.append(userCourse);
+    userCourse.attr("class","animated fadeIn");
 
     // 是管理员 且 删除按钮并未添加
     if(isAdmin && $("#courseDelete").length == 0){
@@ -316,7 +318,7 @@ function dealModifyPass() {
             method: "POST",
             data: {"oldPass": oldPass.val(), "newPass": newPass.val()},
             error: function () {
-                alert("请求异常");
+                sweetAlert("Oops...", "请求异常", "error");
             },
             success: function (data) {
                 var _data = JSON.parse(data);

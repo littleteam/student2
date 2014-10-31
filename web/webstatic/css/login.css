@@ -58,6 +58,15 @@ footer div {
 main {
     min-height: 464px;
 }
+
+#divLoginBtn {
+    text-align: center;
+}
+#loginBtn{
+    width: 100px;
+    margin-bottom: -16px;
+    margin-top: 10px;
+}
 #main-left {
     /*top: 120px;*/
     /*float: right;*/
