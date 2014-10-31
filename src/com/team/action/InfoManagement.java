@@ -93,7 +93,6 @@ public class InfoManagement extends ActionSupport {
     // 请求查看课表
     public String ListCourse() {
 
-
         if (islogin()) {
             Map<String, Object> map = new HashMap<String, Object>();
             CourseDao courdao = new CourseDao();

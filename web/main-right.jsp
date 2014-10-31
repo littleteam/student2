@@ -50,19 +50,6 @@
     <div id="userPass">
         <div class="panel-heading">修改密码</div>
         <%--Table--%>
-        <%--<div id="userPassTable">--%>
-            <%--<div class="form-group">--%>
-                <%--<label for="oldPass" class="control-label">原始密码</label>--%>
-                <%--<input type="password" id="oldPass" name="some_name" class="control-label">--%>
-            <%--</div>--%>
-            <%--<div class="form-group">--%>
-                <%--<label for="newPass" class="control-label">新密码</label>--%>
-                <%--<input type="password" id="newPass" name="some_name" class="control-label">--%>
-            <%--</div>--%>
-            <%--<div class="form-group">--%>
-                <%--<button id="btnModifyPass" class="btn btn-default">提交</button>--%>
-            <%--</div>--%>
-        <%--</div>--%>
     </div>
 
     <div id="userCourse">
@@ -71,6 +58,10 @@
         <table id="userCourseTable" class="table">
 
         </table>
+        <button id="courseDelete" class="btn btn-danger"
+                style="float:right; margin-right: 9px; margin-bottom: 10px;">删除</button>
+        <button id="courseSubmit" class="btn btn-default"
+                style="float:right; margin-right: 9px; margin-bottom: 10px;">提交</button>
     </div>
     <div id="userInfo">
         <div class="panel-heading">用户信息</div>

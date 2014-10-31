@@ -90,9 +90,9 @@ main {
     text-align: center;
     min-width: 120px;
 }
-#userCourseTable th {
-    padding-left: 15px;
-}
-#userCourseTable td, #userInfoTable td {
-    padding-left: 25px;
+/*#userCourseTable th {*/
+    /*padding-left: 15px;*/
+/*}*/
+#userInfoTable td {
+    padding-left: 20px;
 }
