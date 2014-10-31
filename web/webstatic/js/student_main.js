@@ -122,7 +122,15 @@ function courseSubmit() {
             alert("请求异常");
         },
         success: function (data) {
-            alert("success");
+            var _data = JSON.parse(data);
+            var result = _data.result;
+
+            if(result == "error"){
+                return;
+            } else {
+                var operate = _data.case;
+                alert("success");
+            }
         }
     })
 }
