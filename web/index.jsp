@@ -5,6 +5,20 @@
   Time: 14:33
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    // 将过期日期设置为一个过去时间
+
+    response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
+
+// 设置 HTTP/1.1 no-cache 头
+    response.setHeader("Cache-Control", "no-store,no-cache,must-revalidate");
+
+// 设置 IE 扩展 HTTP/1.1 no-cache headers， 用户自己添加
+    response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+
+// 设置标准 HTTP/1.0 no-cache header.
+    response.setHeader("Pragma", "no-cache");
+%>
 <%@ page contentType="text/html;charset=UTF-8" import="java.util.*" language="java" %>
 <%@ page import="com.team.domain.Account" %>
 <%

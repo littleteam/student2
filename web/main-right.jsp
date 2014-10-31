@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="javax.xml.ws.Response" %>
 <%--
   Created by IntelliJ IDEA.
   User: 斌
@@ -17,6 +18,10 @@
         response.sendRedirect("login.jsp");
         return;
     }
+    response.setHeader("Cache-Control","no-store");
+    response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
+
 %>
 <div id="main-right" class="panel panel-default">
 </div>

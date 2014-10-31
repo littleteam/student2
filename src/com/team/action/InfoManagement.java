@@ -40,6 +40,26 @@ public class InfoManagement extends ActionSupport {
     private String result;
     private Course course;
 
+    public String getOperate() {
+        return operate;
+    }
+
+    public void setOperate(String operate) {
+        this.operate = operate;
+    }
+
+    private String operate;
+
+    public JSONArray getCourseID() {
+        return courseID;
+    }
+
+    public void setCourseID(JSONArray courseID) {
+        this.courseID = courseID;
+    }
+
+    private JSONArray courseID;
+
     public String getNewPass() {
         return newPass;
     }
@@ -99,7 +119,7 @@ public class InfoManagement extends ActionSupport {
             Map<String, Object> map = new HashMap<String, Object>();
             CourseDao courdao = new CourseDao();
             ActionContext ctx = ActionContext.getContext();
-            map.put("querylist", courdao.Query(course));
+            map.put("querylist", CourseDao.Query(course));
             map.put("case", RequestType.ListCourse);
             result = JSONObject.fromObject(map).toString();
             System.out.println(result);
@@ -120,10 +140,25 @@ public class InfoManagement extends ActionSupport {
 
     // 请求修改课表
     public String ModifyCourse() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        JSONObject joob;
+        Course cou = new Course();
         if (islogin()) {
-            CourseDao coudao = new CourseDao();
-//            JSONObject jsonObject = JSONObject.fromObject(stringJson);
+           //            JSONObject jsonObject = JSONObject.fromObject(stringJson);
             JSONArray jsonArray = JSONArray.fromObject(stringJson);
+            for(int i=0;i<jsonArray.size();i++) {
+                joob = JSONObject.fromObject(jsonArray.get(i));
+                if(joob.get("couOperate").equals("delete"))
+                {
+                    CourseDao.Deleate( Integer.parseInt(joob.get("couID").toString()));
+                }
+                else if(joob.get("couOperate").equals("modify")){
+
+                }
+            }
+            map.put("querylist",CourseDao.Query(cou));
+            map.put("result", "ok");
+            result = JSONObject.fromObject(map).toString();
             return Action.SUCCESS;
         } else
             return "logout";

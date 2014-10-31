@@ -1,7 +1,9 @@
 /**
  * Created by 斌 on 2014/10/26.
  */
-
+$.ajaxSetup ({
+    cache: false //关闭AJAX相应的缓存
+});
 function checkInput(errorCode) {
 
     if(errorCode) {

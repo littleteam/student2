@@ -41,7 +41,9 @@ public class LoginAction extends ActionSupport {
 
 
     public String Logout() {
-        return "logout";
+        ActionContext ctx=ActionContext.getContext();
+        ctx.getSession().clear();
+   return "logout";
     }
 
     public String CheckLogin() {

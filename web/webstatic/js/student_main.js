@@ -127,7 +127,7 @@ function CourseEntity(couOperate, couID, couGrade, couName, couSchName) {
     this.couName = couName;
     this.couSchName = couSchName;
 }
-
+$.ajaxSetup({cache:false})
 function dealCourseDataTrans() {
     var course = [];
     var modifiedTrs = $("tr[class=modified]", "#userCourseTable");
@@ -272,7 +272,7 @@ $().ready(function () {
 
         $.ajax({
                 url: _url,
-                method: "get",
+                method: "POST",
                 error: function () {
                     alert("请求异常");
                 },

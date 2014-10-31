@@ -17,6 +17,9 @@
         response.sendRedirect("login.jsp");
         return;
     }
+    response.setHeader("Cache-Control","no-store");
+    response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
 %>
 <div id="main-left" class="list-group">
     <a href="#" class="list-group-item active">个人信息</a>

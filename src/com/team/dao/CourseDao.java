@@ -30,14 +30,17 @@ public class CourseDao {
             HibernateUtil.closeSession();
         }
     }
-    public static void Deleate(Course course){
+    public static void Deleate(int couid){
         Session s=null;
         Transaction tx=null;
         try {
             s=HibernateUtil.getSession();
             tx=s.beginTransaction();
-            s.delete(course);
+            Course c=(Course)s.get(Course.class,couid);
+            s.delete(c);
+            s.flush();
             tx.commit();
+
         }
         catch (HibernateException e)
         {
@@ -66,21 +69,24 @@ public class CourseDao {
             HibernateUtil.closeSession();
         }
     }
-    public static ArrayList<Course> Query(Course course){
+    public static ArrayList<Object> Query(Course course){
         Session s = null;
         try {
             s = HibernateUtil.getSession();
             String hql = "From Course c where 1=1";
             if(null!=course)
             {
-                if(!course.getCouName().equals(""))  hql += " and c.couId='" + course.getCouId() + "'";
+                if(!(course.getCouId()==0)) hql += " and c.couId='" + course.getCouId() + "'";
                 if(!course.getCouName().equals(""))  hql += " and c.couName='" + course.getCouName() + "'";
                 if(!course.getCouGrade().equals(0)) hql += " and c.couGrade='" + course.getCouGrade() + "'";
+                if(!course.getCouSchName().equals("")) hql += " and c.couSchName='" + course.getCouSchName() + "'";
+
             }
             Query q = s.createQuery(hql);
             /*计算当前显示页码的开始记录*/
-            List scoreInfoList = q.list();
-            return (ArrayList<Course>) scoreInfoList;
+            List info =q.list();
+            HibernateUtil.closeSession();
+            return (ArrayList<Object>) info;
         } finally {
             HibernateUtil.closeSession();
         }
