@@ -84,12 +84,12 @@ function fillListCourse(tbody, _data) {
 CourseDeleted = [];
 CourseModified = [];
 
-function courseDelete(){
+function courseDelete() {
     // 获取所有选中元素 行级元素
-    var checkedboxs = $('input[type=checkbox]:checked',userCourseTable);
+    var checkedboxs = $('input[type=checkbox]:checked', userCourseTable);
     var trs = checkedboxs.parent().parent();
     var tds = $('td', trs);
-    trs.attr("class","animated bounceOutRight");
+    trs.attr("class", "animated bounceOutRight");
 
     // 动画结束,隐藏元素
     $(trs).one('webkitAnimationEnd', function () {
@@ -99,21 +99,72 @@ function courseDelete(){
     // 添加课程id到 CourseDeleted
     // 获取thead列数
     var thead_cols_num = $("th", userCourseTable).length;
-    for(var i = 0; i < tds.length; i += thead_cols_num) {
-        var courseId = $('input', tds[i+1]).val();
+    for (var i = 0; i < tds.length; i += thead_cols_num) {
+        var courseId = $('input', tds[i + 1]).val();
         CourseDeleted.push(courseId);
     }
 
 }
-var arrayUnique = function(a) {
-    return a.reduce(function(p, c) {
+var arrayUnique = function (a) {
+    return a.reduce(function (p, c) {
         if (p.indexOf(c) < 0) p.push(c);
         return p;
     }, []);
 };
+/**
+ *
+ * @param couID
+ * @param couGrade
+ * @param couName
+ * @param couSchName
+ * @param couOperate 操作类型,修改or删除
+ * @constructor
+ */
+function CourseEntity(couOperate, couID, couGrade, couName, couSchName) {
+    this.couOperate = couOperate;
+    this.couID = couID;
+    this.couGrade = couGrade;
+    this.couName = couName;
+    this.couSchName = couSchName;
+}
+
+function dealCourseDataTrans() {
+    var course = [];
+    var modifiedTrs = $("tr[class=modified]", "#userCourseTable");
+    for (var i = 0; i < modifiedTrs.length; i++) {
+        var tr = modifiedTrs[i];
+        var inputs = $('input', tr);
+        var cou_grade = inputs[0].value;
+        var cou_id = inputs[1].value;
+        var cou_name = inputs[2].value;
+        var cou_sch_name = inputs[3].value;
+        var modifiedRow = new CourseEntity("modify", cou_id, cou_grade, cou_name, cou_sch_name);
+
+        course.push(modifiedRow);
+    }
+
+    var deletedTrs = $(".bounceOutRight", "#userCourseTable");
+    for (var ii = 0; ii < deletedTrs.length; ii++) {
+        var _tr = deletedTrs[i];
+        var _inputs = $('input', _tr);
+//        var _cou_grade = tr[0];
+        var _cou_id = _inputs[1].value;
+//        var _cou_name = tr[2];
+//        var _cou_sch_name = tr[3];
+        var _modifiedRow = new CourseEntity("delete", _cou_id);
+
+        course.push(_modifiedRow);
+    }
+    return course;
+}
+
 function courseSubmit() {
-    var uniCourseID = arrayUnique(CourseDeleted);
-    var data = {operate:"delete", "courseID":uniCourseID};
+    var data = dealCourseDataTrans();
+    if(data.length < 1){
+        return;
+    }
+    // todo:添加确认confirm
+
     $.ajax({
         url: "/QueryModifyCourse",
         data: {stringJson: JSON.stringify(data)},
@@ -125,26 +176,31 @@ function courseSubmit() {
             var _data = JSON.parse(data);
             var result = _data.result;
 
-            if(result == "error"){
+            if (result == "error") {
                 return;
             } else {
                 var operate = _data.case;
                 alert("success");
             }
         }
-    })
+    });
 }
 
 function dealListCourse(_data) {
     // 将右侧div清空
     main_right.empty();
 
-    var tbody = initTable($("#userCourseTable", userCourse)[0], ["课程年级", "课程ID", "课程名", "所在学院",""], _data);
+    var tbody = initTable($("#userCourseTable", userCourse)[0], ["课程年级", "课程ID", "课程名", "所在学院", ""], _data);
     fillListCourse(tbody, _data);
     main_right.append(userCourse);
 
     $("#courseSubmit").bind("click", courseSubmit);
     $("#courseDelete").bind("click", courseDelete);
+    $("input", "#userCourseTable").bind("input", function (e) {
+        var target = e.target;
+        var tr = $(target).parent().parent();
+        tr.attr("class", "modified");
+    });
 }
 
 function clearModifyPassForm() {
