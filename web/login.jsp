@@ -14,9 +14,12 @@
     <link href="webstatic/css/bootstrap.css" rel="stylesheet">
     <link href="webstatic/css/bootstrap-theme.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="webstatic/css/login.css">
+    <link rel="stylesheet" type="text/css" href="webstatic/css/sweet-alert.css">
+
     <script type="text/javascript" src="webstatic/js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="webstatic/js/bootstrap.js"></script>
     <script type="text/javascript" src="webstatic/js/student_login.js"></script>
+    <script type="text/javascript" src="webstatic/js/sweet-alert.js"></script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>用户登陆</title>
