@@ -8,6 +8,7 @@ import com.team.dao.CourseDao;
 import com.team.domain.Account;
 import com.team.domain.Admin;
 import com.team.domain.Course;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONString;
 
@@ -121,8 +122,8 @@ public class InfoManagement extends ActionSupport {
     public String ModifyCourse() {
         if (islogin()) {
             CourseDao coudao = new CourseDao();
-            JSONObject jsonObject = JSONObject.fromObject(stringJson);
-
+//            JSONObject jsonObject = JSONObject.fromObject(stringJson);
+            JSONArray jsonArray = JSONArray.fromObject(stringJson);
             return Action.SUCCESS;
         } else
             return "logout";
