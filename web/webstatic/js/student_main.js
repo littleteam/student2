@@ -185,7 +185,7 @@ function dealCourseDataTrans() {
     }
     // 获取添加的行
     var addedTrs = $(".added", "#userCourseTable");
-    for (var added_i = 0; ii < addedTrs.length; ii++) {
+    for (var added_i = 0; added_i < addedTrs.length; added_i++) {
         var _added_tr = addedTrs[added_i];
         if(isLastTrHasNull(_added_tr)){
             // 存在空值,跳过提交
@@ -242,6 +242,7 @@ function courseSubmit() {
                     } else {
                         swal("已提交", "请求已成功提交。", "success");
                     }
+                    $("#aCourseQuery").click();
                 }
             });
         }

@@ -22,7 +22,7 @@
     response.setDateHeader ("Expires", 0);
 %>
 <div id="main-left" class="list-group">
-    <a href="#" class="list-group-item active">个人信息</a>
-    <a href="#" class="list-group-item">课表查询</a>
+    <a href="#" id="aPerInfo" class="list-group-item active">个人信息</a>
+    <a href="#" id="aCourseQuery" class="list-group-item">课表查询</a>
     <a href="#" class="list-group-item" style="display:none">密码修改</a>
 </div>
