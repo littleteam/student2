@@ -9,6 +9,7 @@ import com.team.domain.Account;
 import com.team.domain.Admin;
 import com.team.domain.Course;
 import net.sf.json.JSONObject;
+import net.sf.json.JSONString;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -106,11 +107,21 @@ public class InfoManagement extends ActionSupport {
         } else
             return "logout";
     }
+    private String stringJson;
+
+    public String getStringJson() {
+        return stringJson;
+    }
+
+    public void setStringJson(String stringJson) {
+        this.stringJson = stringJson;
+    }
 
     // 请求修改课表
     public String ModifyCourse() {
         if (islogin()) {
             CourseDao coudao = new CourseDao();
+            JSONObject jsonObject = JSONObject.fromObject(stringJson);
 
             return Action.SUCCESS;
         } else

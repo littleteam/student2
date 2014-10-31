@@ -116,7 +116,7 @@ function courseSubmit() {
     var data = {operate:"delete", "courseID":uniCourseID};
     $.ajax({
         url: "/QueryModifyCourse",
-        data: data,
+        data: {stringJson: JSON.stringify(data)},
         method: "POST",
         error: function () {
             alert("请求异常");
