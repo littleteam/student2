@@ -58,10 +58,7 @@
         <table id="userCourseTable" class="table">
 
         </table>
-        <button id="courseDelete" class="btn btn-danger"
-                style="float:right; margin-right: 9px; margin-bottom: 10px;">删除</button>
-        <button id="courseSubmit" class="btn btn-default"
-                style="float:right; margin-right: 9px; margin-bottom: 10px;">提交</button>
+        
     </div>
     <div id="userInfo">
         <div class="panel-heading">用户信息</div>

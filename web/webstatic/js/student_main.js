@@ -145,7 +145,7 @@ function dealCourseDataTrans() {
 
     var deletedTrs = $(".bounceOutRight", "#userCourseTable");
     for (var ii = 0; ii < deletedTrs.length; ii++) {
-        var _tr = deletedTrs[i];
+        var _tr = deletedTrs[ii];
         var _inputs = $('input', _tr);
 //        var _cou_grade = tr[0];
         var _cou_id = _inputs[1].value;
@@ -193,6 +193,11 @@ function dealListCourse(_data) {
     var tbody = initTable($("#userCourseTable", userCourse)[0], ["课程年级", "课程ID", "课程名", "所在学院", ""], _data);
     fillListCourse(tbody, _data);
     main_right.append(userCourse);
+
+    if(isAdmin && $("#courseDelete").length == 0){
+        $("#userCourseTable").after('<button id="courseDelete" class="btn btn-danger" style="float:right; margin-right: 9px; margin-bottom: 10px;">删除</button>' +
+            '<button id="courseSubmit" class="btn btn-default" style="float:right; margin-right: 9px; margin-bottom: 10px;">提交</button>');
+    }
 
     $("#courseSubmit").bind("click", courseSubmit);
     $("#courseDelete").bind("click", courseDelete);
