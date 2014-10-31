@@ -186,7 +186,7 @@ function dealCourseDataTrans() {
     // 获取添加的行
     var addedTrs = $(".added", "#userCourseTable");
     for (var added_i = 0; ii < addedTrs.length; ii++) {
-        var _added_tr = deletedTrs[added_i];
+        var _added_tr = addedTrs[added_i];
         if(isLastTrHasNull(_added_tr)){
             // 存在空值,跳过提交
             continue;
